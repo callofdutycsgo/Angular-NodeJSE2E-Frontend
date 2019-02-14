@@ -1,13 +1,26 @@
 <form [formGroup]="profileForm">
-  
   <label>
     First Name:
-    <input type="text" formControlName="firstName">
+    <input type="text" formControlName="firstName" value="firstName">
   </label>
+
+  <label>
+    Email:
+    <input type="text" formControlName="emailID">
+  </label><br><br>
+
+  <label>
+    Phones:
+    <input type="text" formControlName="phoneNumber">
+  </label> 
+  
 
   <label>
     Last Name:
     <input type="text" formControlName="lastName">
-  </label>
+  </label> <hr><br>
+
+
+  <button (click)="formData()">Auto Fill</button>
 
 </form>
