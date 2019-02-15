@@ -1,9 +1,33 @@
-import { MatButtonModule, MatCheckboxModule } from '@angular/material';
+import { 
+    MatButtonModule, 
+    MatCheckboxModule,  
+    MatFormFieldModule, 
+    MatInputModule,
+    MatRippleModule,
+    MatSlideToggleModule,
+    MatBadgeModule,
+    MatCardModule,
+    MatChipsModule
+             } from '@angular/material';
+
 import { NgModule } from '@angular/core';
-import {MatFormFieldModule} from '@angular/material/form-field';
+
+const modules = [
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatRippleModule,
+    MatCheckboxModule,
+    MatSlideToggleModule,
+    MatBadgeModule,
+    MatCardModule,
+    MatChipsModule
+];
 
 @NgModule({
-    imports: [MatButtonModule, MatCheckboxModule, MatFormFieldModule],
-    exports: [MatButtonModule, MatCheckboxModule, MatFormFieldModule],
+imports: [...modules],
+exports: [...modules]
 })
+
+
 export class MaterialModule { }

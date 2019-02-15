@@ -1,6 +1,7 @@
 {
-  "name": "angular-frontend",
-  "version": "0.0.0",
+  "name": "resolute-backend",
+  "version": "1.0.0",
+  "description": "JupiterFE v1 ",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 80",

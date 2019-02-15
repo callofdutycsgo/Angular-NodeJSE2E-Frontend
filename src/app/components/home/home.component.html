@@ -1,26 +1,39 @@
-<form [formGroup]="profileForm">
-  <label>
-    First Name:
-    <input type="text" formControlName="firstName" value="firstName">
-  </label>
+<div class="container">
+  <mat-card>
+    <form class="form" [formGroup]="profileForm">
 
-  <label>
-    Email:
-    <input type="text" formControlName="emailID">
-  </label><br><br>
+      <mat-chip-list>
+        <mat-chip>Welcome &nbsp; <span *ngIf="this.xData" class="badge badge-light">USER {{this.xData.id}}</span> </mat-chip>
+      </mat-chip-list><br>
 
-  <label>
-    Phones:
-    <input type="text" formControlName="phoneNumber">
-  </label> 
-  
-
-  <label>
-    Last Name:
-    <input type="text" formControlName="lastName">
-  </label> <hr><br>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="First Name" type="text" formControlName="firstName">
+      </mat-form-field>
 
 
-  <button (click)="formData()">Auto Fill</button>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Last Name" type="text" formControlName="lastName">
+      </mat-form-field>
 
-</form>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Email" type="text" formControlName="emailID">
+      </mat-form-field>
+
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Phones" type="text" formControlName="phoneNumber">
+      </mat-form-field><br>
+
+
+      <mat-slide-toggle formControlName="isPrimary">Primary ? </mat-slide-toggle><br><br>
+
+
+      <button class="update" mat-raised-button color="primary" (click)="formData()">Update</button>
+      <button class="reset" mat-button color="warn" (click)="clearData()">Reset</button>
+      <button class="autofill" mat-raised-button (click)="formData()">Auto Fill </button>
+
+
+    </form>
+  </mat-card>
+</div>

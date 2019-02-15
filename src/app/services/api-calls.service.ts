@@ -11,10 +11,12 @@ const httpOptions = {
 };
 
 export interface xDATA {
+  id: number
   firstName: string
   lastName: string
   emailID: string
   phoneNumber: number
+  isPrimary: boolean
 }
 @Injectable({
   providedIn: 'root'
@@ -22,13 +24,19 @@ export interface xDATA {
 export class ApiService {
 
   constructor(private http: HttpClient) { }
-  xDataUrl = 'http://localhost:8080/form';
+  xgetDataUrl = 'http://localhost:8080/getform';
+  xpostDataUrl = 'http://localhost:8080/updateform';
+
   xData: xDATA;
 
   getxDataResponse(): Observable<HttpResponse<xDATA>> {
     return this.http.get<xDATA>(
-      this.xDataUrl, { observe: 'response' });
+      this.xgetDataUrl, { observe: 'response' });
   }
 
+  postxDataRequest() {
+    return this.http.post(
+      this.xpostDataUrl, httpOptions);
+  }
 
 }
