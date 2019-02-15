@@ -33,13 +33,15 @@ export class HomeComponent {
 
   constructor(private api: ApiService, public fb: FormBuilder) { }
   xData: xDATA = null;
-
+ currentDate: any = null;
 
 
 
   formData() {
+
     this.api.getxDataResponse().subscribe(resp => {
       this.xData = { ...resp.body };
+      this.currentDate = new Date(); 
       this.profileForm.setValue({
         id: this.xData.id,
         firstName: this.xData.firstName,

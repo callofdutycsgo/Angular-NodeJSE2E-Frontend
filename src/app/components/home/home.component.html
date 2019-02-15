@@ -1,6 +1,7 @@
 <div class="container">
   <mat-card>
     <form class="form" [formGroup]="profileForm">
+        <h6 *ngIf="this.xData" >{{ currentDate |  date:'HH:MM:a'}}&nbsp; &nbsp;{{ currentDate | date:'fullDate' | uppercase}}<hr></h6>
 
       <mat-chip-list>
         <mat-chip>Welcome &nbsp; <span *ngIf="this.xData" class="badge badge-light">USER {{this.xData.id}}</span> </mat-chip>
