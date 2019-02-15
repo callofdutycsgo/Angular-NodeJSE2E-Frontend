@@ -5,15 +5,17 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { ApiService } from './services/api-calls.service'
 import { ReactiveFormsModule } from '@angular/forms';
-import { AppRoutingModule } from './routing.module';
+import { AppRoutingModule } from './app.routing';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { AuthPageComponent } from './components/auth-page/auth-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    AuthPageComponent
   ],
   imports: [
     BrowserModule,
